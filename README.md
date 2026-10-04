@@ -4,7 +4,7 @@ Tou is a small pet-care game for your phone. Feed your triangle, wash it, let it
 
 I wanted a simple character to feel like a companion through the little things: a happy dance, a familiar routine, and remembering your favorite color.
 
-**Status:** working prototype · Android debug APK v1.0.4 · native iOS project prepared, not signed or released.
+**Status:** working prototype · Android debug APK v1.0.5 · native iOS project prepared, not signed or released.
 
 [Product case study](docs/CASE-STUDY.md) · [Product brief](docs/PRODUCT-BRIEF.md) · [Android setup](ANDROID.md) · [iPhone setup](IOS.md) · [Verification notes](docs/TESTING.md)
 
@@ -54,7 +54,7 @@ pnpm ios:sync
 
 Android requires Java 21 and an Android SDK. iOS requires Xcode and Apple signing. Full instructions are in [ANDROID.md](ANDROID.md) and [IOS.md](IOS.md).
 
-This public snapshot leaves out the older voice recordings. Generated activity sounds and spoken replies remain included.
+Download the [Android test installer](https://github.com/guptasippy3-cloud/tou/releases/tag/v1.0.5). See [phone installation instructions](docs/NATIVE-INSTALL.md).
 
 The Android test installer is generated at `android/app/build/outputs/apk/debug/app-debug.apk`. It should be distributed through a GitHub Release rather than committed to the repository. No signed iOS installer or TestFlight release is available.
 
@@ -66,7 +66,7 @@ node tests/experience.cjs 2
 node tests/experience.cjs 3
 ```
 
-The latest focused tests passed 34 checks across three runs, covering navigation, care, memories, audio file contents, playback requests, mute, colors, outfits, and syntax. Tests use simulated browser APIs. I still need to test sound quality and behavior on real phones. [Read the verification limits](docs/TESTING.md).
+The latest focused tests passed 35 checks across three runs, covering navigation, care, memories, audio file contents, playback requests, mute, colors, outfits, and syntax. Tests use simulated browser APIs. I still need to test sound quality and behavior on real phones. [Read the verification limits](docs/TESTING.md).
 
 ## Built with
 
