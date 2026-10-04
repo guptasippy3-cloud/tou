@@ -194,6 +194,7 @@ let activityAudio;
 function stopActivitySounds() {
   if (activityAudio) { activityAudio.pause(); activityAudio.currentTime = 0; activityAudio = null; }
 }
+window.TouStopAudio = stopActivitySounds;
 function activitySound(action) {
   if (!state.sound || !activityFiles[action] || typeof window.Audio !== 'function') return;
   stopActivitySounds();
@@ -328,5 +329,5 @@ if (Recognition) {
 decay(); render(); if (!state.started) $('welcome').showModal();
 if (window.TouPlatform || window.TouNative) { $('welcome').querySelector('small').textContent = 'Progress saves automatically. Play even without Wi-Fi.'; }
 setInterval(() => { decay(); render(); },60000);
-document.addEventListener('visibilitychange', () => { if (!document.hidden) { decay(); render(); } });
+document.addEventListener('visibilitychange', () => { if (!document.hidden) { decay(); render(); } else { stopActivitySounds(); if ('speechSynthesis' in window) speechSynthesis.cancel(); } });
 if (!window.TouPlatform && !window.TouNative && 'serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
