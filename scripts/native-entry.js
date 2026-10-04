@@ -25,7 +25,7 @@ async function start() {
     try { window.TouNative.voices = (await Promise.race([NativeSpeech.getVoices(), new Promise(resolve => setTimeout(() => resolve({ voices: [] }), 4000))])).voices; } catch {}
     await NativeSpeech.addListener('speaking', ({ active }) => document.getElementById('scene').classList.toggle('talking', active));
     }
-    await App.addListener('appStateChange', ({ isActive }) => { if (!isActive) { if (window.TouNative) window.TouNative.stop();
+    await App.addListener('appStateChange', ({ isActive }) => { if (!isActive) { if (window.TouStopAudio) window.TouStopAudio(); if (window.TouNative) window.TouNative.stop();
       if ('speechSynthesis' in window) speechSynthesis.cancel(); const audio = document.getElementById('pip-recording'); if (audio) audio.pause(); } });
     if (window.TouPlatform === 'android') await App.addListener('backButton', () => {
       const dialog = document.getElementById('welcome');
