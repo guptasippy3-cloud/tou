@@ -26,7 +26,7 @@ async function start() {
     await NativeSpeech.addListener('speaking', ({ active }) => document.getElementById('scene').classList.toggle('talking', active));
     }
     await App.addListener('appStateChange', ({ isActive }) => { if (!isActive) { if (window.TouStopAudio) window.TouStopAudio(); if (window.TouNative) window.TouNative.stop();
-      if ('speechSynthesis' in window) speechSynthesis.cancel(); const audio = document.getElementById('pip-recording'); if (audio) audio.pause(); } });
+      if ('speechSynthesis' in window) speechSynthesis.cancel(); } });
     if (window.TouPlatform === 'android') await App.addListener('backButton', () => {
       const dialog = document.getElementById('welcome');
       if (dialog.open) { if (JSON.parse(localStorage.getItem(KEY) || '{}').started) dialog.close(); return; }
