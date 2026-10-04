@@ -1,16 +1,16 @@
 # Tou native test builds
 
-## Android v1.0.5
+## Android v1.0.6
 
 This is a debug-signed test installer, not a Google Play release. Transfer the APK to an Android phone, open it, and allow installation from that file-opening app if prompted. Keep the existing app installed when updating if you want to preserve its save.
 
-Version 1.0.5/code 6 includes the two-tab interface, generated activity sounds, populated Dance audio, and a fix that stops activity audio when the app backgrounds. Older recorded-voice samples are excluded from the bundle.
+Version 1.0.6/code 7 includes the two-tab interface, generated activity sounds, populated Dance audio, and a fix that stops activity audio when the app backgrounds. Older recorded-voice samples are excluded from the bundle.
 
 No Android phone was connected during packaging. Installation, upgrade persistence, speech, keyboard layout, and restart behavior still need real-device checks.
 
 ## iPhone
 
-The iOS source project is prepared at version 1.0.5/build 6, with bundled game assets and voice-permission descriptions. It has not been compiled or signed.
+The iOS source project is prepared at version 1.0.6/build 7, with bundled game assets and voice-permission descriptions. It has not been compiled or signed.
 
 The preparation Mac runs macOS 14.6.1 and has no Xcode. Capacitor 8's current Xcode setup needs a newer compatible Mac environment. Apple lists Xcode 26 as requiring macOS 15.6 or newer: https://developer.apple.com/xcode/system-requirements/
 
