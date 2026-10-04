@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile, cp, copyFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, cp, copyFile, rm } from 'node:fs/promises';
 import { build } from 'esbuild';
 await mkdir('www/public/fonts', { recursive: true });
 let html = await readFile('index.html', 'utf8');
@@ -15,7 +15,8 @@ for (const [name, family, weights] of [['dm-sans','DM Sans',[400,500,600,700]],[
   }
 }
 await writeFile('www/style.css', fonts.join('\n') + '\n' + css);
-await cp('public', 'www/public', { recursive: true });
+for (const file of ['pip-voice.mp3','pip-voice-clean.wav']) await rm(`www/public/audio/${file}`, { force: true });
+await cp('public', 'www/public', { recursive: true, filter: path => !/pip-voice(?:-clean)?\.(?:mp3|wav)$/.test(path) });
 await copyFile('app.js','www/app.js');
 await copyFile('manifest.webmanifest','www/manifest.webmanifest');
 await build({entryPoints:['scripts/native-entry.js'],bundle:true,outfile:'www/native.js',format:'iife',target:'chrome110'});
