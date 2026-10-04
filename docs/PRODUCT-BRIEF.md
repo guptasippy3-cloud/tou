@@ -1,42 +1,50 @@
-# Tou — product brief
+# Tou product brief
 
-## Product hypothesis
+## What I want to find out
 
-An expressive, low-friction pet companion could encourage short daily visits by combining care routines, playful feedback, and remembered personal details. This is a hypothesis, not a validated engagement claim.
+Can a simple, expressive pet make a short daily visit feel enjoyable enough for someone to come back?
 
-## Intended audience
+Care routines, playful feedback, and remembered details are my starting ideas. I haven’t validated whether they lead to repeat use yet.
 
-People who enjoy casual virtual-pet experiences and want a small companion they can care for on their phone. Audience segmentation and demand remain to be researched.
+## Who I’m designing for
 
-## Core user job
+People who enjoy casual virtual-pet games and want a small companion on their phone. I still need to learn more about which people would use it and what they would value most.
 
-“When I have a spare moment, I want to care for and interact with a familiar little character, so the visit feels personal and rewarding.”
+## The main task
 
-## MVP priorities
+“When I have a spare moment, I want to care for and play with a familiar little character.”
 
-| Priority | Capability | Reason |
+## What comes first
+
+| Priority | Feature | Why it matters |
 |---|---|---|
-| Essential | Feed, clean, rest, and visible needs | Establish the core care loop |
-| Essential | Expressive character and immediate feedback | Make actions understandable and rewarding |
-| Essential | Saved progress | Preserve continuity between visits |
-| Important | Directly accessible tricks | Provide a short playful interaction |
-| Important | Local preferences and conversation | Support a sense of familiarity |
-| Secondary | Clothing, colors, voice tuning | Support personalization without crowding daily tasks |
-| Later | Cloud accounts and richer conversation | Add complexity only after validating the core experience |
+| Essential | Feeding, cleaning, resting, and visible needs | Give people a clear reason to care for the pet |
+| Essential | Expressions, movement, and immediate feedback | Help people understand the pet’s response |
+| Essential | Saved progress | Let the friendship continue between visits |
+| Important | Easy-to-find tricks | Make a short visit fun |
+| Important | Conversation and remembered preferences | Make interactions feel more personal |
+| Secondary | Outfits, colors, and voice settings | Add choice without crowding everyday actions |
+| Later | Accounts and more capable conversation | Consider these after testing the basic experience |
 
-## Scope and tradeoffs
+## Choices I made
 
-Local saving avoids account friction but does not sync across devices. Rule-based chat supports a small set of remembered details but is not open-ended AI conversation. Two main tabs reduce navigation; secondary activities open in place. Android packaging enables standalone testing; iOS distribution awaits signing and physical-device validation.
+Progress saves locally so people can start without an account. The tradeoff is that it doesn’t follow them to another device.
 
-## Proposed validation
+Chat uses simple rules to remember a few details. That keeps the prototype manageable, but limits what the pet can understand.
 
-Observe participants completing first setup, identifying a care need, playing a trick, changing an outfit, and asking the pet to recall a preference. Record task completion, wrong turns, and participant comments. Do not treat mocked automated tests as evidence of usability.
+Pet and Talk are the two main tabs. Tricks and dress-up open in place so they don’t need their own permanent navigation.
 
-If analytics are later added with appropriate consent, evaluate setup completion, successful care sessions, time to first completed care action, and return visits after one and seven days. No baseline or target is claimed before data exists.
+Android has a test build. iOS still needs signing and testing on an iPhone.
 
-## Proposed next milestones
+## How I would test it
 
-1. Validate core tasks and audio on physical phones.
-2. Resolve unclear recording provenance and publish a shareable demo.
-3. Capture current screens and document observed usability findings.
-4. Use findings to prioritize lifecycle improvements versus conversation depth.
+I would watch people set up their pet, spot a care need, try a trick, change an outfit, and ask the pet to remember a preference. I would note where they hesitate, take a wrong turn, or need help, then ask what they expected to happen.
+
+If I later add analytics with consent, I would look at setup completion, completed care sessions, time to the first care action, and return visits after one and seven days. I haven’t set targets yet because I don’t have a baseline.
+
+## Next steps
+
+1. Try the main tasks and sounds on real phones.
+2. Publish a playable demo using assets cleared for sharing.
+3. Capture current screens and record what I learn from people trying it.
+4. Use those findings to choose the next improvements.
