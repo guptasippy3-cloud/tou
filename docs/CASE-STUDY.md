@@ -1,55 +1,61 @@
-# Tou: making a small pet game feel like a companion
+# Tou: building a little pet companion
 
-## The idea
+## Where it started
 
-Create a mobile companion that feels approachable and easy to care for. A triangle character keeps the visual identity simple while giving animation, expression, and sound room to carry its personality.
+I wanted to make a pet game that someone could open on their phone for a few minutes each day. They would care for a little character, play together, and have a short conversation.
 
-The intended experience is a short daily visit: notice what the pet needs, care for it, play a little, and talk.
+I chose a triangle because it was simple and gave the pet a distinct look. Its expressions, movements, and sounds would give it personality.
 
-## My role and process
+## My role
 
-I originated the concept, directed product and interaction decisions, evaluated working versions, and gave specific feedback. Implementation and documentation were developed with AI coding assistance. This is a personal prototype; there are no claims of a team launch, formal user research, or measured business impact.
+I came up with the concept, decided what the app should do, and reviewed each working version. I used AI coding assistance for implementation and documentation, then gave feedback on what needed to change.
 
-## Decisions that shaped the product
+This is a personal prototype. I haven’t launched it commercially or carried out formal user research yet.
 
-### Keep the pet on screen
+## What changed as I tried it
 
-The first interface required scrolling to reach activities. Feedback led to a viewport-based layout and in-place activity panels. The goal was to keep attention on the companion and make repeated actions reachable.
+### I wanted the pet to stay in view
 
-Current physical-device screen fit and keyboard behavior still need verification.
+The first version needed scrolling to reach some activities. That felt awkward for a small game, so I asked for a layout that kept the pet and its controls on screen. Activities now open in the same space.
 
-### Prioritize frequent actions
+I still need to check this properly on phones, especially when the keyboard is open.
 
-Tricks were initially grouped with customization. This made play difficult to discover and mixed two different intentions. Play now opens Hop, Twirl, and Dance directly from the care controls. Outfits and colors remain together in Dress up.
+### Tricks were in the wrong place
 
-### Reduce navigation
+Hop, Twirl, and Dance were hidden inside customization. When I wanted to play with the pet, that wasn’t where I expected to find them.
 
-A four-destination navigation felt excessive for a small game. The current design has Pet and Talk. Less frequent activities open inside the pet experience and have a Done action to return.
+I moved tricks under Play and kept outfits and colors together in Dress up. The controls now follow what someone is trying to do.
 
-### Give actions a personality
+### There were too many tabs
 
-Care actions first had musical tones, then foley approximations. Feedback pushed the sounds toward a more playful animated-film character: munches, bubbles, cozy rest, magical twirling, and a voiced dance phrase.
+Four main destinations felt like too much navigation for such a small app. I reduced them to Pet and Talk. Tricks and dress-up open within the pet screen, with a Done button to return.
 
-An empty dance WAV caused silence despite passing the earlier playback-request checks. The fix replaced the clip and added assertions for nonempty, nonzero audio samples. This exposed a testing lesson: checking that playback was requested is not enough to verify an audio asset.
+### The sounds needed more personality
 
-### Remember small details
+The early sounds were musical tones. I wanted eating to feel like eating, washing to feel bubbly, and tricks to feel playful. I refined them into softer care sounds, magical chimes for Twirl, and a “la la la” clip for Dance.
 
-Local rules remember the user's name, favorite color, and favorite food. These details create continuity without an account. Memories can be reviewed and cleared in Talk.
+Dance was silent at one point because the WAV file contained no audio samples. The tests had only checked whether playback was requested. We replaced the file and added checks for actual audio data. That was a useful reminder to test the asset itself, not just the code that plays it.
 
-## Current result
+### Small details made it feel more personal
 
-A working browser prototype and Android debug build, plus a prepared native iOS project. The latest focused automated suite passes 34 checks. Native device behavior and audio quality remain to be assessed on actual phones.
+The pet remembers your name, favorite color, and favorite food on the device. You can review or clear those memories in Talk. Conversation is rule-based, so it handles these simple exchanges rather than open-ended chat.
 
-There are no retention metrics or usability-study findings yet. Existing screenshots show earlier iterations, not the final navigation.
+## Where the project is now
 
-## What I learned
+Tou works in a browser and has an Android test build. The native iOS project is prepared but still needs signing and device testing.
 
-- Put frequent actions where the user's attention already is.
-- Organize features by user intention rather than available screen space.
-- Use animation and sound to reinforce an action's meaning.
-- Test the contents of media assets, not just API calls.
-- Report prototype and verification limits precisely.
+The focused automated suite passes 34 checks. Those checks use simulated browser APIs, so they don’t tell me how the sounds feel or how well the app works on a real phone. The screenshots in this repository show an earlier version.
 
-## What comes next
+I don’t have retention data or user-study results yet.
 
-Physical-device sessions, current demo captures, public demo hosting, signed iOS testing, and a richer pet lifecycle.
+## What I’m taking away
+
+- Keep everyday actions easy to find.
+- Group features around what people want to do.
+- Use sound and movement to make feedback clearer.
+- Check media files as well as playback logic.
+- Be clear about what has been tested and what is still an assumption.
+
+## My next step
+
+I want to watch people try the main tasks on their phones, capture the current experience, and publish a playable demo. That will help me decide whether to improve the pet’s lifecycle or its conversation next.
