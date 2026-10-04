@@ -1,0 +1,28 @@
+node_modules/
+www/
+.gradle/
+android/.gradle/
+android/local.properties
+android/**/build/
+*.keystore
+*.jks
+
+# Local caches, secrets, packaged downloads, and personal configuration
+.DS_Store
+.pnpm-store/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+*.p12
+*.mobileprovision
+*.ipa
+*.apk
+downloads/
+ios/Pods/
+# Voice recording provenance must be confirmed before public distribution.
+public/audio/pip-voice.mp3
+public/audio/pip-voice-clean.wav

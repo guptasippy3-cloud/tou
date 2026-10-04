@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tou</string>
+    <string name="title_activity_main">Tou</string>
+    <string name="package_name">com.tou.petgame</string>
+    <string name="custom_url_scheme">com.tou.petgame</string>
+</resources>
