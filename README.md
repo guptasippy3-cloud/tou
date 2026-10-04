@@ -1,8 +1,8 @@
-# Tou — a little triangle, a big friendship
+# Tou: a little triangle, a big friendship
 
-A mobile pet-care prototype built around an animated triangle. Feed it, wash it, let it rest, teach it tricks, and make it your own with outfits and colors.
+Tou is a small pet-care game for your phone. Feed your triangle, wash it, let it rest, and play together. You can also choose its name, outfits, and colors.
 
-Tou explores how a small character can feel like a companion through daily care, expressive animation, sound, and remembered details.
+I wanted a simple character to feel like a companion through the little things: a happy dance, a familiar routine, and remembering your favorite color.
 
 **Status:** working prototype · Android debug APK v1.0.4 · native iOS project prepared, not signed or released.
 
@@ -24,7 +24,7 @@ Conversation uses local rules, not a general-purpose AI model. Growth stages cha
 
 ![Earlier mobile prototype showing the triangle pet](tests/review-phone.jpg)
 
-This screenshot documents an earlier iteration. The current interface has two main tabs, **Pet** and **Talk**, with tricks and dress-up opened in place. See the [case study](docs/CASE-STUDY.md) for the decisions behind those changes.
+This screenshot shows an earlier version. The current interface has two main tabs, **Pet** and **Talk**, with tricks and dress-up opened in place. See the [case study](docs/CASE-STUDY.md) for the decisions behind those changes.
 
 ## Try it locally
 
@@ -34,7 +34,7 @@ The browser game requires no build step:
 python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
-Open `http://localhost:8080`. Microphone permissions and speech support vary by browser. A publicly hosted HTTPS demo has not been published yet.
+Open `http://localhost:8080`. Microphone permissions and speech support vary by browser. A public playable demo is still to come.
 
 ## Native builds
 
@@ -50,7 +50,7 @@ pnpm ios:sync
 
 Android requires Java 21 and an Android SDK. iOS requires Xcode and Apple signing. Full instructions are in [ANDROID.md](ANDROID.md) and [IOS.md](IOS.md).
 
-This public snapshot excludes the older recorded-voice samples; generated activity sounds and dynamic spoken replies remain included.
+This public snapshot leaves out the older voice recordings. Generated activity sounds and spoken replies remain included.
 
 The Android test installer is generated at `android/app/build/outputs/apk/debug/app-debug.apk`. It should be distributed through a GitHub Release rather than committed to the repository. No signed iOS installer or TestFlight release is available.
 
@@ -62,7 +62,7 @@ node tests/experience.cjs 2
 node tests/experience.cjs 3
 ```
 
-The latest focused suite passed 34 assertions across three runs, covering navigation, care, memories, audio file contents, playback requests, mute, colors, outfits, and syntax. Tests use simulated browser APIs. They do not prove audible quality or physical-device behavior. [Read the verification limits](docs/TESTING.md).
+The latest focused tests passed 34 checks across three runs, covering navigation, care, memories, audio file contents, playback requests, mute, colors, outfits, and syntax. Tests use simulated browser APIs. I still need to test sound quality and behavior on real phones. [Read the verification limits](docs/TESTING.md).
 
 ## Built with
 
@@ -77,9 +77,9 @@ android/ and ios/               Native projects
  docs/                          Product case study and verification notes
 ```
 
-## My approach
+## My role
 
-I directed the concept and product experience, reviewed iterations, and used AI coding assistance to implement and refine the prototype. The project demonstrates turning feedback into concrete interaction changes; it is not presented as entirely hand-written code.
+I came up with the idea, shaped the experience, and reviewed each version. I used AI coding assistance to help build and refine the app. The [case study](docs/CASE-STUDY.md) explains the changes I made and what I learned along the way.
 
 ## Next steps
 
