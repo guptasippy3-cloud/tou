@@ -141,26 +141,15 @@ function renderVoices() {
   picker.value = state.voice || ''; picker.disabled = !voices.length;
 }
 let speechTurn = 0;
-const recording = $('pip-recording');
-recording.onplay = () => {
-  if (window.TouNative) window.TouNative.stop();
-  ++speechTurn;
-  if ('speechSynthesis' in window) speechSynthesis.cancel();
-  state.sound = true; save(); render();
-  $('scene').classList.add('talking');
-};
-recording.onpause = recording.onended = recording.onerror = () => $('scene').classList.remove('talking');
 function speakReply(message) {
   if (window.TouNative) {
     if (!state.sound) return;
-    if (recording.pause) recording.pause();
     const voice = preferredVoice(availableVoices());
     window.TouNative.speak({ text: message.replace(/[♡✦👑]/gu, ''), voice: voice ? voice.voiceURI : '', ...state.voiceSettings })
       .catch(() => { $('chat-hint').textContent = 'Install an offline English voice in Android’s text-to-speech settings to hear replies.'; });
     return;
   }
   if (!state.sound || !('speechSynthesis' in window)) return;
-  if (recording.pause) recording.pause();
   const turn = ++speechTurn;
   $('scene').classList.remove('talking');
   speechSynthesis.cancel();
@@ -199,7 +188,6 @@ function activitySound(action) {
   if (!state.sound || !activityFiles[action] || typeof window.Audio !== 'function') return;
   stopActivitySounds();
   if (action === 'dance' || action === 'play') {
-    if (recording.pause) recording.pause();
     if (window.TouNative) window.TouNative.stop();
     if ('speechSynthesis' in window) { ++speechTurn; speechSynthesis.cancel(); }
   }
@@ -296,7 +284,7 @@ document.querySelectorAll('[data-care]').forEach(button => button.onclick = () =
 document.querySelectorAll('[data-trick]').forEach(button => button.onclick = () => performTrick(button.dataset.trick));
 document.querySelectorAll('[data-tab]').forEach(button => button.onclick = () => { tab = button.dataset.tab; renderTab(); });
 $('chat-form').onsubmit = event => { event.preventDefault(); chat($('chat-input').value); };
-$('sound').onclick = () => { state.sound = !state.sound; if (!state.sound) stopActivitySounds(); if (!state.sound && window.TouNative) { window.TouNative.stop(); if (recording.pause) recording.pause(); } if(!state.sound && 'speechSynthesis' in window) { ++speechTurn; if (recording.pause) recording.pause(); speechSynthesis.cancel(); $('scene').classList.remove('talking'); } save(); render(); };
+$('sound').onclick = () => { state.sound = !state.sound; if (!state.sound) stopActivitySounds(); if (!state.sound && window.TouNative) { window.TouNative.stop(); } if(!state.sound && 'speechSynthesis' in window) { ++speechTurn; speechSynthesis.cancel(); $('scene').classList.remove('talking'); } save(); render(); };
 function renderSetup() {
   $('setup-name').textContent = $('pet-name').value.trim() || 'Pip';
   $('setup-pet').style.background = petColors[state.petColor][1];
