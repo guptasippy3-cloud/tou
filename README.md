@@ -8,6 +8,10 @@ I wanted a simple character to feel like a companion through the little things: 
 
 [Product case study](docs/CASE-STUDY.md) · [Product brief](docs/PRODUCT-BRIEF.md) · [Android setup](ANDROID.md) · [iPhone setup](IOS.md) · [Verification notes](docs/TESTING.md)
 
+## Product and technical documentation
+
+[PRD and product logic](docs/PRD.md) | [Feature list](docs/FEATURES.md) | [Tech stack](docs/TECH-STACK.md) | [Architecture diagrams](docs/ARCHITECTURE.md)
+
 ## The experience
 
 - **Pet and Talk:** two main destinations, with care actions beside the pet.
