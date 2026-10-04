@@ -95,3 +95,7 @@ body[data-screen="play"] aside,body[data-screen="chat"] aside,body[data-screen="
 /* Two destinations; occasional activities open in the pet's existing panel. */
 .pet-tools{display:flex;align-items:center;gap:10px}.pet-tools .text-button{min-height:44px;font-size:10px}.play-panel .section-title button,.wardrobe .section-title button{min-height:44px;padding:0 10px}.screen-tabs{max-width:420px;width:100%;justify-self:center}.screen-tabs button{font-size:13px}.wardrobe .tabs{margin-top:0}.play-panel{padding-top:10px}.play-panel>p{margin-top:0}.trick-choices{margin-top:6px}
 @media(max-height:570px){.play-panel .section-title button,.wardrobe .section-title button{min-height:30px}.pet-tools{gap:6px}.play-panel>p{display:none}.wardrobe .tabs button{min-height:32px}}
+
+/* Keep the route back to daily care obvious and touch-friendly. */
+.back-to-care{border:1px solid #a8bc84;background:#edf2e2;border-radius:12px;padding:0 14px;min-height:44px;font-size:13px;font-weight:700;color:#40572c;white-space:nowrap}
+@media(max-height:570px){.play-panel .section-title .back-to-care,.wardrobe .section-title .back-to-care{min-height:36px}.trick-choices .choice{min-height:54px}}
